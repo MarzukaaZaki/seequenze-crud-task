@@ -16,7 +16,7 @@ const Sidebar = () => {
         <>
         {
             showSidebar ?
-            <div className="fixed z-40 left-0 h-full lg:w-1/6 sm:w-1/2 bg-white text-gray-400 shadow-lg flex flex-col justify-between">
+            <div className="fixed z-40 left-0 h-full lg:w-1/6 sm:w-1/4 bg-white text-gray-400 shadow-lg flex flex-col justify-between">
         
                 
                    
