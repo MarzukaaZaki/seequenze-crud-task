@@ -1,0 +1,14 @@
+nav{
+    max-height: 70px;
+}
+nav p{
+    font-size: xx-small;
+}
+
+.logo-img{
+    max-width: 120px;
+}
+
+.profile-img{
+width: 2.5rem;
+}
