@@ -26,7 +26,7 @@ const Sidebar = () => {
                 <img src={logoImg} alt="Logo" className="logo-img mr-4" />
                     <hr className='border-t-2 border-gray-200'/>
                     <Link to='/' className='flex my-5'> <FaDatabase className='mt-1 me-3'/> My Projects</Link>
-                    <Link to='/' className='flex my-5'> <RiAppsFill className='mt-1 me-3'/>Sample Projects</Link>
+                    <Link to='/samples' className='flex my-5'> <RiAppsFill className='mt-1 me-3'/>Sample Projects</Link>
                     <hr className='border-t-2 border-gray-200'/>
                     <Link to='/' className='flex my-5'> <TbAppsFilled className='mt-1 me-3'/> Apps </Link>
                     <Link to='/' className='flex my-5'> <IoMdPlayCircle className='mt-1 me-3'/> Intro to Necleo</Link>

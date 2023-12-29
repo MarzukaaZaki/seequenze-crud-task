@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { HiDocumentAdd } from "react-icons/hi";
 import './MyProjects.css'
-import Card from '../../components/Card/Card';
 import CreateModal from '../../components/CreateModal/CreateModal';
 import DataCard from '../../components/DataCard/DataCard';
 const MyProjects = () => {
@@ -12,19 +11,11 @@ const MyProjects = () => {
     const [loading, setLoading] = useState();
     const [showForm, setShowForm] = useState(false);
     useEffect(() => {
-        fetchExtApiData();
+
         fetchData();
     }, [])
 
-    const fetchExtApiData = async () => {
-        try {
-            const response = await axios.get('https://picsum.photos/v2/list?page=1&limit=6');
-            setExtData(response.data);
-        } catch (error) {
-            setErrorMessage('Failed to fetch data from external API!');
-            console.log(errorMessage)
-        }
-    }
+ 
 
     const fetchData = async () =>{
         try {
@@ -49,12 +40,7 @@ const MyProjects = () => {
             </div>
             <hr className='mb-4 border-t-2 shadow-md'/>
             <div className='grid lg:grid-cols-3 sm:grid-cols-2 gap-4'>
-                {/* {
-
-
-                    extData.map(extDataImg => <Card key={extDataImg.id} extDataImg={extDataImg}></Card>)
-
-                } */}
+               
                 {
                     data.map(dataImg => <DataCard key={dataImg._id} fetchData={fetchData} dataImg={dataImg}/>)
                 }
