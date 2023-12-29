@@ -12,9 +12,7 @@ const DataCard = ({fetchData, dataImg}) => {
 
  
     
-    const handleEdit = async(_id)=>{
-        console.log(_id)
-    }
+
     const handleDelete =async (_id) =>{
         Swal.fire({
             title: 'Are you sure?',

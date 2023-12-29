@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import Card from '../../components/Card/Card'
 import axios from 'axios';
 import './SampleProjects.css'
+import InfoModal from '../../components/InfoModal/InfoModal';
 const SampleProjects = () => {
     const [extData, setExtData] = useState([]);
+
     useEffect(() => {
         fetchExtApiData();
     }, [])
@@ -27,6 +29,7 @@ const SampleProjects = () => {
 
                 }
             </div>
+            
         </div>
 
     );
