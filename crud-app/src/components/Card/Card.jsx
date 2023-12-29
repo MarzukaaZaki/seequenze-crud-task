@@ -4,7 +4,7 @@ import DetailsModal from '../DetailsModal/DetailsModal';
 import InfoModal from '../InfoModal/InfoModal';
 
 const Card = ({ extDataImg }) => {
-    
+{/** Single Card to show External API Data Details */}
     const { author, download_url } = extDataImg;
     const [showForm, setShowForm] = useState(false);
     return (

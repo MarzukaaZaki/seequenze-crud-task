@@ -40,6 +40,7 @@ const MyProjects = () => {
             </div>
             <hr className='mb-4 border-t-2 shadow-md'/>
             <div className='grid lg:grid-cols-3 sm:grid-cols-2 gap-4'>
+                {/** Iterate through the array to display info in card */}
                
                 {
                     data.map(dataImg => <DataCard key={dataImg._id} fetchData={fetchData} dataImg={dataImg}/>)
