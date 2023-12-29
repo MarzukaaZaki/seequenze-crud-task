@@ -71,6 +71,23 @@ async function run() {
                 res.status(500).json({ error: 'Failed to save photo.' });
             }
         })
+        app.put('/editphoto/:id', async(req, res)=>{
+            const id = req.params.id;
+            const body = req.body;
+            const filter = { _id: new ObjectId(id)};
+            const editPhoto = {
+                $set:{
+                    author_name: body.author_name,
+                    width: body.width,
+                    height: body.height,
+                    url: body.url,
+                    download_url: body.download_url
+
+                }
+            };
+            const result = await photos.updateOne(filter, editPhoto);
+            res.send(result);
+        })
         app.delete('/delete/:id', async(req, res)=>{
             const id = req.params.id;
             const query = { _id: new ObjectId(id)};

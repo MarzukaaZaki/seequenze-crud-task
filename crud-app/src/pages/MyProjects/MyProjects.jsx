@@ -56,7 +56,7 @@ const MyProjects = () => {
 
                 } */}
                 {
-                    data.map(dataImg => <DataCard key={dataImg._id} dataImg={dataImg}/>)
+                    data.map(dataImg => <DataCard key={dataImg._id} fetchData={fetchData} dataImg={dataImg}/>)
                 }
             </div>
         </div>
