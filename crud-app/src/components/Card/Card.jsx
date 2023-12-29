@@ -3,7 +3,6 @@ import { MdOutlineModeEditOutline, MdOutlineDeleteOutline } from "react-icons/md
 import DetailsModal from '../DetailsModal/DetailsModal';
 
 const Card = ({ extDataImg }) => {
-    const [showDetails, setShowDetails] = useState(false)
     const { author, download_url } = extDataImg;
    
     return (

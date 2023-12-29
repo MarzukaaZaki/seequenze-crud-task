@@ -5,7 +5,7 @@ import { IoIosClose } from "react-icons/io";
 
 
 
-const CreateModal = ({ isVisible, onClose }) => {
+const CreateModal = ({ fetchData, isVisible, onClose }) => {
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
     const onSubmit = async(data) => {
         try{
@@ -21,6 +21,7 @@ const CreateModal = ({ isVisible, onClose }) => {
             }
             reset();
             
+            fetchData();
 
             
         }catch(error){

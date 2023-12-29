@@ -61,7 +61,7 @@ const MyProjects = () => {
             </div>
         </div>
         
-        <CreateModal isVisible={showForm} onClose={()=> setShowForm(false)}/>
+        <CreateModal fetchData={fetchData} isVisible={showForm} onClose={()=> setShowForm(false)}/>
         </>
     );
 };

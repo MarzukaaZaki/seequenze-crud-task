@@ -26,7 +26,7 @@ const port = process.env.PORT || 5000;
 
 
 // Connect Mongodb Database
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const uri = `mongodb+srv://${process.env.VITE_DB_USER}:${process.env.VITE_DB_PASSWORD}@cluster0.10dhryt.mongodb.net/?retryWrites=true&w=majority`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -71,7 +71,12 @@ async function run() {
                 res.status(500).json({ error: 'Failed to save photo.' });
             }
         })
-
+        app.delete('/delete/:id', async(req, res)=>{
+            const id = req.params.id;
+            const query = { _id: new ObjectId(id)};
+            const result = await photos.deleteOne(query);
+            res.send(result)
+        })
 
 
     } finally {
