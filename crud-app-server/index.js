@@ -9,7 +9,13 @@ require('dotenv').config();
 
 // Middleware
 const cors = require('cors');
-app.use(cors());
+const corsConfig = {
+    origin: '*',
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE']
+}
+app.use(cors(corsConfig))
+app.options("", cors(corsConfig))
 
 app.use(express.json())
 
@@ -38,6 +44,11 @@ async function run() {
         // Send a ping to confirm a successful connection
         // await client.db("admin").command({ ping: 1 });
         console.log("Pinged your deployment. You successfully connected to MongoDB!");
+        // Connect database
+        const database = client.db('seequenzeDB');
+        const photos = database.collection('photos')
+
+
 
         // API Endpoints
         // Defining a URL and the response the users will get when they go to that url.
@@ -45,6 +56,18 @@ async function run() {
             response.send('Hello from my projects server')
         })
 
+        app.post('/addphoto', async (req, res) => {
+            try {
+                const body = req.body;
+                const result = await photos.insertOne(body);
+                console.log(result);
+                res.send(result);
+
+            } catch (error) {
+                console.error('Error saving photo', error);
+                res.status(500).json({ error: 'Failed to save photo.' });
+            }
+        })
 
 
 
