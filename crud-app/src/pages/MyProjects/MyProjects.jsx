@@ -31,6 +31,7 @@ const MyProjects = () => {
                 <p className='my-2'>Create a new project</p>
                 <p className='text-xs'> or <span className='text-primary'> try a sample project</span></p>
             </div>
+            <hr className='mb-4 border-t-2 shadow-md'/>
             <div className='grid lg:grid-cols-3 sm:grid-cols-2 gap-4'>
                 {
 
