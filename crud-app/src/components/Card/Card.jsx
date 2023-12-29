@@ -5,6 +5,7 @@ import DetailsModal from '../DetailsModal/DetailsModal';
 const Card = ({ extDataImg }) => {
     const [showDetails, setShowDetails] = useState(false)
     const { author, download_url } = extDataImg;
+   
     return (
         <>
         <div className='bg-white flex flex-col items-center justify-center rounded-lg p-2'>
@@ -23,7 +24,7 @@ const Card = ({ extDataImg }) => {
 
         </div>
         
-        <DetailsModal extDataImg={extDataImg} isVisible={showDetails} onClose={()=>setShowDetails(false)}/>
+        
         </>
     );
 };

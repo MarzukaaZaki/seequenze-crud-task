@@ -55,7 +55,10 @@ async function run() {
         app.get('/', (request, response) => {
             response.send('Hello from my projects server')
         })
-
+        app.get('/photos', async(req, res)=>{
+            const result = await photos.find({}).toArray();
+            res.send(result)
+        })
         app.post('/addphoto', async (req, res) => {
             try {
                 const body = req.body;
