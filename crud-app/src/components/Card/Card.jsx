@@ -4,7 +4,7 @@ import DetailsModal from '../DetailsModal/DetailsModal';
 
 const Card = ({ extDataImg }) => {
     const [showDetails, setShowDetails] = useState(false)
-    const { id, author, width, height, url, download_url } = extDataImg;
+    const { author, download_url } = extDataImg;
     return (
         <>
         <div className='bg-white flex flex-col items-center justify-center rounded-lg p-2'>
