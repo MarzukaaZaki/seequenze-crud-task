@@ -9,7 +9,7 @@ const CreateModal = ({ fetchData, isVisible, onClose }) => {
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
     const onSubmit = async(data) => {
         try{
-            const response = await axios.post('http://localhost:5000/addphoto', data, {
+            const response = await axios.post('https://crud-app-server-swart.vercel.app/addphoto', data, {
                 headers: {
                     'Content-Type' : 'application/json'
                 }

@@ -8,7 +8,7 @@ const EditModal = ({editInfo, onClose, dataImg, fetchData}) => {
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
     const onSubmit = async(data)=>{
         try{
-            const response = await axios.put(`http://localhost:5000/editphoto/${_id}`, data, {
+            const response = await axios.put(`https://crud-app-server-swart.vercel.app/editphoto/${_id}`, data, {
                 headers:{
                     'Content-Type': 'application/json',
                 }

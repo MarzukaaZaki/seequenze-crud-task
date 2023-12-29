@@ -27,7 +27,7 @@ const DataCard = ({fetchData, dataImg}) => {
           }).then(async (result) => {
             if (result.isConfirmed) {
               try {
-                const response = await axios.delete(`http://localhost:5000/delete/${_id}`);
+                const response = await axios.delete(`https://crud-app-server-swart.vercel.app/delete/${_id}`);
                 const data = response.data;
         
                 if (data.deletedCount > 0) {

@@ -5,7 +5,7 @@ import './MyProjects.css'
 import CreateModal from '../../components/CreateModal/CreateModal';
 import DataCard from '../../components/DataCard/DataCard';
 const MyProjects = () => {
-    const [extData, setExtData] = useState([]);
+
     const [data, setData] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState();
@@ -19,7 +19,7 @@ const MyProjects = () => {
 
     const fetchData = async () =>{
         try {
-            const response = await axios.get('http://localhost:5000/photos');
+            const response = await axios.get('https://crud-app-server-swart.vercel.app/photos');
             setData(response.data);
         } catch (error) {
             setErrorMessage('Failed to fetch data from external API!');
